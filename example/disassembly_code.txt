@@ -1,0 +1,65 @@
+  0           0 RESUME                   0
+
+  2           2 PUSH_NULL
+              4 LOAD_NAME                0 (int)
+              6 PUSH_NULL
+              8 LOAD_NAME                1 (input)
+             10 LOAD_CONST               0 ('Enter a number: ')
+             12 PRECALL                  1
+             16 CALL                     1
+             26 PRECALL                  1
+             30 CALL                     1
+             40 STORE_NAME               2 (num)
+
+  5          42 LOAD_CONST               1 (1)
+             44 STORE_NAME               3 (start)
+
+  6          46 LOAD_CONST               2 (10)
+             48 STORE_NAME               4 (end)
+
+  9          50 PUSH_NULL
+             52 LOAD_NAME                5 (print)
+             54 LOAD_CONST               3 ('Multiplication table for ')
+             56 LOAD_NAME                2 (num)
+             58 FORMAT_VALUE             0
+             60 LOAD_CONST               4 (':')
+             62 BUILD_STRING             3
+             64 PRECALL                  1
+             68 CALL                     1
+             78 POP_TOP
+
+ 10          80 PUSH_NULL
+             82 LOAD_NAME                6 (range)
+             84 LOAD_NAME                3 (start)
+             86 LOAD_NAME                4 (end)
+             88 LOAD_CONST               1 (1)
+             90 BINARY_OP                0 (+)
+             94 PRECALL                  2
+             98 CALL                     2
+            108 GET_ITER
+        >>  110 FOR_ITER                26 (to 164)
+            112 STORE_NAME               7 (i)
+
+ 11         114 LOAD_NAME                2 (num)
+            116 LOAD_NAME                7 (i)
+            118 BINARY_OP                5 (*)
+            122 STORE_NAME               8 (result)
+
+ 12         124 PUSH_NULL
+            126 LOAD_NAME                5 (print)
+            128 LOAD_NAME                2 (num)
+            130 FORMAT_VALUE             0
+            132 LOAD_CONST               5 (' x ')
+            134 LOAD_NAME                7 (i)
+            136 FORMAT_VALUE             0
+            138 LOAD_CONST               6 (' = ')
+            140 LOAD_NAME                8 (result)
+            142 FORMAT_VALUE             0
+            144 BUILD_STRING             5
+            146 PRECALL                  1
+            150 CALL                     1
+            160 POP_TOP
+            162 JUMP_BACKWARD           27 (to 110)
+
+ 10     >>  164 LOAD_CONST               7 (None)
+            166 RETURN_VALUE
